@@ -63,6 +63,24 @@ class ChangeUntilCommand(sublime_plugin.TextCommand):
         clear_contents(view, edit, del_region)
 
 
+class YankWordCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit):
+        view = self.view
+        cur = view.sel()[0]
+        word_region = view.word(cur)
+        word = view.substr(word_region)
+        sublime.set_clipboard(word)
+
+class DeleteWordCommand(sublime_plugin.TextCommand):
+
+    def run(self,edit):
+        view = self.view
+        cursors = view.sel()
+        for cur in cursors:
+            word_region = view.word(cur)
+            clear_contents(view, edit, word_region)
+
 def get_indentation(view, region):
     region_content = view.substr(region)
     return spaceRe.search(region_content).group(0)
