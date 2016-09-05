@@ -58,6 +58,7 @@ class ChangeUntilCommand(sublime_plugin.TextCommand):
             return
         cursor = view.sel()[0]
         fltr = SublimeFilter(view, wait_until)
+        # get the region from cursor to line end
         end = fltr.suffix(cursor.begin())
         del_region = sublime.Region(cursor.begin(), end)
         clear_contents(view, edit, del_region)
@@ -95,10 +96,11 @@ class ReplaceCurrentWordCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         view = self.view
-        print("Run")
         if len(view.sel()) > 1:
             return
+        # expand current selection to the word
         view.run_command("expand_selection", {'to': 'word'})
+        # execute the find all under command
         self.view.window().run_command("find_all_under")
 
 
@@ -113,6 +115,7 @@ class SelectBetweenCommand(sublime_plugin.TextCommand):
         else:
             wait_until = ["\""]
         fltr = SublimeFilter(view, wait_until)
+        # Get the bounding box of the selection
         region = fltr.scan(view.sel()[0].begin())
         move_cursor(view, region)
 
