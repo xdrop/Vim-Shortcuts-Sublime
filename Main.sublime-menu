@@ -1,0 +1,65 @@
+[
+    {
+        "mnemonic": "n", 
+        "caption": "Preferences", 
+        "id": "preferences", 
+        "children": [
+            {
+                "mnemonic": "P", 
+                "caption": "Package Settings", 
+                "id": "package-settings", 
+                "children": [
+                    {
+                        "caption": "Vim Sublime Shortcuts", 
+                        "children": [
+                            {
+                                "caption": "README",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Vim Sublime Shortcuts/README.md"
+                                }
+                            },
+                            { "caption": "-" },
+                            // Settings - Default
+                            {
+                                "caption": "Settings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Vim Sublime Shortcuts/Vim Sublime Shortcuts.sublime-settings"
+                                }
+                            },
+                            // Settings - User
+                            {
+                                "caption": "Settings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Vim Sublime Shortcuts.sublime-settings"
+                                }
+                            },
+                            { "caption": "-" },
+                            // Key Bindings - Default
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Vim Sublime Shortcuts/Default ($platform).sublime-keymap"
+                                }
+                            },
+                            // Key Bindings - User
+                            {
+                                "caption": "Key Bindings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default ($platform).sublime-keymap"
+                                }
+                            }, 
+                            {
+                                "caption": "-"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -24,7 +24,6 @@ class SublimeFilter:
         left_bound = self.get_bound(point, -1)
         right_bound = self.get_bound(point, +1)
         return sublime.Region(left_bound + 1, right_bound)
-   
 
     def get_bound(self, point, direction):
         view = self.view

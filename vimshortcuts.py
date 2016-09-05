@@ -100,6 +100,7 @@ class ReplaceCurrentWordCommand(sublime_plugin.TextCommand):
         view.run_command("")
         view.run_command("")
 
+
 class SelectBetweenCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, **args):
@@ -112,13 +113,13 @@ class SelectBetweenCommand(sublime_plugin.TextCommand):
             wait_until = ["\""]
         fltr = SublimeFilter(view, wait_until)
         region = fltr.scan(view.sel()[0].begin())
-        move_cursor(view, region)        
-
+        move_cursor(view, region)
 
 
 def move_cursor(view, region):
     view.sel().clear()
     view.sel().add(region)
+
 
 def get_indentation(view, region):
     region_content = view.substr(region)
