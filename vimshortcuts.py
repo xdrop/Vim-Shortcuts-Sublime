@@ -96,17 +96,17 @@ class ReplaceCurrentWordCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         view = self.view
         print("Run")
-        if len(view(sel)) > 1:
+        if len(view.sel()) > 1:
             return
-        view.run_command("find_under_expand")
-        view.run_command("find_all_under")
+        view.run_command("expand_selection", {'to': 'word'})
+        self.view.window().run_command("find_all_under")
 
 
 class SelectBetweenCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, **args):
         view = self.view
-        if len(view(sel)) > 1:
+        if len(view.sel()) > 1:
             return
         if args["wait_until"]:
             wait_until = args["wait_until"]
