@@ -23,15 +23,15 @@ class SublimeFilter:
         view = self.view
         left_bound = self.get_bound(point, -1)
         right_bound = self.get_bound(point, +1)
-        return sublime.Region(left_bound, right_bound)
+        return sublime.Region(left_bound + 1, right_bound)
    
 
     def get_bound(self, point, direction):
         view = self.view
         for i in range(0, scan_limit):
             next_point = point + (i * direction)
-            scanned_char = get_char(next_point)
-            if not is_pass(scanned_char):
+            scanned_char = get_char(view, next_point)
+            if not self.is_pass(scanned_char):
                 return next_point
 
 
