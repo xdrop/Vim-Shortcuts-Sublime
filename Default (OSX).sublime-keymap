@@ -1,7 +1,6 @@
 [
 	{ "keys": ["alt+.","c"], "command": "change_word", "args": {}},
 	{ "keys": ["alt+.","l"], "command": "replace_line", "args": {}},
-	{ "keys": ["alt+/","u"], "command": "change_until", "args": {"replace_until" : ["y"]}},
 	{ "keys": ["alt+.","q"], "command": "select_between", "args": {"wait_until" : ["'","\""]}},
 	{ "keys": ["alt+.","d"], "command": "delete_to_eol"},
 	{ "keys": ["alt+.","y"], "command": "yank_word"},

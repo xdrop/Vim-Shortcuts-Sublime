@@ -1,0 +1,35 @@
+[
+	{
+		"caption": "Change word",
+		"command": "change_word"
+	},
+	{
+		"caption": "Replace line",
+		"command": "replace_line"
+	},
+	{
+		"caption": "Select in quotes",
+		"command": "select_between",
+		"args": {"wait_until" : ["'","\""]}
+	},
+	{
+		"caption": "Delete to EOL",
+		"command": "delete_to_eol"
+	},
+	{
+		"caption": "Yank (copy) word",
+		"command": "yank_word"
+	},
+	{
+		"caption": "Delete word",
+		"command": "delete_word"
+	},
+	{
+		"caption": "Replace word",
+		"command": "replace_current_word"
+	},
+	{
+		"caption": "Repeat last command",
+		"command": "repeat_last"
+	}
+]
