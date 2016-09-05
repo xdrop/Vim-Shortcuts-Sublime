@@ -72,4 +72,6 @@
 	{ "keys": ["alt+/","<"], "command": "change_until", "args": {"replace_until" : ["<"]}},
 	{ "keys": ["alt+/","["], "command": "change_until", "args": {"replace_until" : ["["]}},
 	{ "keys": ["alt+/","]"], "command": "change_until", "args": {"replace_until" : ["]"]}},
+	{ "keys": ["alt+/","("], "command": "change_until", "args": {"replace_until" : ["("]}},
+	{ "keys": ["alt+/",")"], "command": "change_until", "args": {"replace_until" : [")"]}}
 ]
