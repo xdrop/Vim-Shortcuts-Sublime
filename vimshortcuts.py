@@ -59,7 +59,7 @@ class ChangeUntilCommand(sublime_plugin.TextCommand):
         cursor = view.sel()[0]
         fltr = SublimeFilter(view, [wait_until])
         end = fltr.suffix(cursor.begin())
-        del_region = sublime.Region(cursor.begin(), end)
+        del_region = sublime.Region(cursor.begin(), en)
         clear_contents(view, edit, del_region)
 
 
@@ -81,6 +81,26 @@ class DeleteWordCommand(sublime_plugin.TextCommand):
         for cur in cursors:
             word_region = view.word(cur)
             clear_contents(view, edit, word_region)
+
+
+class RepeatLastCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit):
+        view = self.view
+        (name, args, count) = view.command_history(0, True)
+        view.run_command(name, args)
+
+
+class ReplaceCurrentWord(sublime_plugin.TextCommand):
+
+    def run(self, edit):
+        view = self.view
+        if 0 >= len(view.sel()) > 1:
+            return
+        view.run_command(" dsad dsdsd sdsd ")
+        view.run_command("")
+
+
 
 
 def get_indentation(view, region):
